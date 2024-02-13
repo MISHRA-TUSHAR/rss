@@ -33,6 +33,7 @@ func main() {
 	}
 
 	conn, err := sql.Open(("postgres"), dbURL)
+	// db, err := sql.Open(("postgres"), dbURL)
 	if err != nil {
 		log.Fatal("Can't connect to database", err)
 	}
@@ -59,8 +60,9 @@ func main() {
 	router.Mount("/v1", v1Router)
 
 	srv := &http.Server{
+		// Addr:    ":" + portString,
+		Addr:    ":8000",
 		Handler: router,
-		Addr:    ":" + portString,
 	}
 
 	log.Printf("Server listening on port %s", portString)
