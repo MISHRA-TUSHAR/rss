@@ -40,9 +40,11 @@ func (q *Queries) CreateUser(ctx context.Context, arg CreateUserParams) (User, e
 		&i.CreatedAt,
 		&i.UpdatedAt,
 		&i.Name,
+		&i.ApiKey,
 	)
 	return i, err
 }
+
 const getUserByAPIKey = `-- name: GetUserByAPIKey :one
 SELECT id, created_at, updated_at, name, api_key FROM users WHERE api_key = $1
 `
