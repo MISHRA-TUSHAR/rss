@@ -79,6 +79,7 @@ Some endpoints require authentication. To authenticate, include a valid JWT toke
 
 ## Dependencies
 
-- github.com/go-chi/chi: Router for HTTP services.
-- github.com/joho/godotenv: Load environment variables from `.env` file.
-- github.com/lib/pq: PostgreSQL driver for Go.
+- [github.com/go-chi/chi](https://github.com/go-chi/chi): Router for HTTP services.
+- [github.com/joho/godotenv](https://github.com/joho/godotenv): Load environment variables from `.env` file.
+- [github.com/lib/pq](https://github.com/lib/pq): PostgreSQL driver for Go.
+
