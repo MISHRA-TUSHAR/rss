@@ -1,12 +1,7 @@
--- +goose Up
-CREATE TABLE feeds (
-    id UUID PRIMARY KEY,
-    created_at TIMESTAMP NOT NULL,
-    updated_at TIMESTAMP NOT NULL,
-    name TEXT NOT NULL,
-    url TEXT NOT NULL UNIQUE,
-    user_id UUID NOT NULL REFERENCES users(id) ON DELETE CASCADE
-);
+-- name: CreateFeed :one
+INSERT INTO feeds (id, created_at, updated_at, name, url, user_id)
+VALUES ($1, $2, $3, $4, $5, $6)
+RETURNING *;
 
--- +goose Down
-DROP TABLE feeds;
+-- name: GetFeeds :many
+SELECT * FROM feeds;
