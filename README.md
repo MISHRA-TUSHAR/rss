@@ -1,4 +1,4 @@
-# RSS Reader API
+                                                        # RSS Reader API
 
 RSS Reader API is a web service that allows users to manage RSS feeds and subscriptions. It provides endpoints for creating users, managing feeds, and subscribing to feeds.
 
